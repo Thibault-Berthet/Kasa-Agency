@@ -1,8 +1,17 @@
+import Banner from "../../components/Banner"
+import styled from "styled-components"
+import CardContainer from "../../components/CardContainer"
+
+const HomeContainer = styled.div`
+	margin: 5%;
+`
+
 function Home() {
 	return (
-		<div>
-			<h1>Ici s'afficherons les logements</h1>
-		</div>
+		<HomeContainer>
+			<Banner />
+			<CardContainer />
+		</HomeContainer>
 	)
 }
 
