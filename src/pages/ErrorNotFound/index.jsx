@@ -1,6 +1,5 @@
 /* ------------ Code REACT pour la page ErrorNotFound ------------*/
 
-
 import ErrorPage from "../../components/ErrorPage"
 
 function ErrorNotFound() {

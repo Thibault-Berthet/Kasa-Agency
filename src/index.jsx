@@ -1,7 +1,7 @@
 /* ------------ Code REACT pour l'index ------------*/
 
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 import Header from './components/Header'

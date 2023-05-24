@@ -38,6 +38,7 @@ const CardTitle = styled.h2`
     margin-top: 280px;
     margin-left: 20px;
     max-width: 250px;
+    background: linear-gradient(180deg, rgb(235, 99, 99) 0%, rgba(54, 26, 26, 0.667) 100% );
     @media screen and (max-width: ${variables.mobileResponsive}) {
         margin-top: 195px;
         max-width: 250px;
@@ -46,39 +47,37 @@ const CardTitle = styled.h2`
 
 function Card() {
 
-    const [logementData, setLogement] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:3000/logements.json')
-
-            .then((response) => response.json())
-
-            .then(data => {
-                setLogement(data)
-            })
-    }, [])
+    const [logements, setLogements] = useState([]);
 
     // useEffect(() => {
-    //     async function fetchLogement() {
-    //         try {
-    //             const response = await fetch('http://localhost:3000/logements.json')
-    //             const {logementData} = await response.json()
-    //             setLogement(logementData)
-    //         } catch(err) {
-    //             console.log('--- error ---', err)
-    //         }
-    //     }
-    //     fetchLogement()
+    //     fetch('http://localhost:3000/logements.json')
+
+    //         .then((response) => response.json())
+
+    //         .then(data => {
+    //             setLogements(data)
+    //         })
     // }, [])
+
+    useEffect(() => {
+        async function fetchLogement() {
+            try {
+                const response = await fetch('http://localhost:3000/logements.json')
+                const data = await response.json()
+                setLogements(data)
+            } catch(err) {
+                console.log('--- error ---', err)
+            }
+        }
+        fetchLogement()
+    }, [])
 
     return (
         <CardStyled>
-            {logementData.map((data, index) => (
-                <Link to={`/logements/:${data.id}`}>
-                    <div key={`${data.id}-${index}`}>
-                        <CardTitle>{data.title}</CardTitle>
-                        <CardCover src={data.cover} />
-                    </div>
+            {logements.map((data, index) => (
+                <Link to={`/logements/${data.id}`} key={`${data.id}-${index}`}>
+                    <CardTitle>{data.title}</CardTitle>
+                    <CardCover src={data.cover} />
                 </Link>
             ))}
         </CardStyled>

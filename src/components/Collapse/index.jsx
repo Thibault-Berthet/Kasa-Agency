@@ -82,13 +82,13 @@ function Collapse(props) {
                 <CategoryChevron 
                     src={isOpen ? chevronUp : chevronDown}/>
             </CategoryContainer>
-            { isOpen ?
-            <ExplanationContainer>
-                <ExplanationText>
-                    {props.aboutExplanation}
-                </ExplanationText>
-            </ExplanationContainer>
-             : null }  
+            {isOpen &&
+                <ExplanationContainer>
+                    <ExplanationText>
+                        {props.aboutExplanation}
+                    </ExplanationText>
+                </ExplanationContainer>
+            }
         </AboutContainer>
     )
 }

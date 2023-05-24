@@ -1,12 +1,17 @@
 /* ------------ Code REACT pour le composant Slideshow ------------*/
 
-import chevronLeft from "../../assets/chevron_left.svg"
-import chevronRight from "../../assets/chevron_right.svg"
+import styled from "styled-components"
+
+const PicturesStyled = styled.img`
+
+`
 
 function Slideshow(props) {
     return (
         <div>
-            i
+            <PicturesStyled
+                src={props.pictures[1]}
+            />
         </div>
     )
 }

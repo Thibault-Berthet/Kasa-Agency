@@ -18,7 +18,8 @@ function About() {
 				<Collapse 
 					key={data.id}
 					aboutCategory={data.aboutCategory}
-					aboutExplanation={data.aboutExplanation} />
+					aboutExplanation={data.aboutExplanation}
+				/>
 			))}
 		</AboutContainer>
 	)
