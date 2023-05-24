@@ -1,3 +1,5 @@
+/* ------------ Code REACT pour le composant Card ------------*/
+
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
@@ -8,6 +10,10 @@ const CardStyled = styled.article`
     display: flex;
     flex-flow: wrap row;
     justify-content: space-between;
+    @media screen and (max-width: ${variables.mobileResponsive}) {
+        justify-content: center;
+        align-content: center;
+	}
 `
 const CardCover = styled.img`
     position: realtive;
@@ -19,6 +25,7 @@ const CardCover = styled.img`
     background: linear-gradient(180deg, rgb(235, 99, 99) 0%, rgba(54, 26, 26, 0.667) 100% );
     @media screen and (max-width: ${variables.mobileResponsive}) {
         width: 100%;
+        max-width: 340px;
         height: 255px;
 	}
 `
@@ -37,9 +44,9 @@ const CardTitle = styled.h2`
 	}
 `
 
-function Card({cover, title, id}) {
+function Card() {
 
-    const [logement, setLogement] = useState([]);
+    const [logementData, setLogement] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:3000/logements.json')
@@ -51,12 +58,27 @@ function Card({cover, title, id}) {
             })
     }, [])
 
+    // useEffect(() => {
+    //     async function fetchLogement() {
+    //         try {
+    //             const response = await fetch('http://localhost:3000/logements.json')
+    //             const {logementData} = await response.json()
+    //             setLogement(logementData)
+    //         } catch(err) {
+    //             console.log('--- error ---', err)
+    //         }
+    //     }
+    //     fetchLogement()
+    // }, [])
+
     return (
         <CardStyled>
-            {logement.map((data) => (
+            {logementData.map((data, index) => (
                 <Link to={`/logements/:${data.id}`}>
-                    <CardTitle>{data.title}</CardTitle>
-                    <CardCover src={data.cover} />
+                    <div key={`${data.id}-${index}`}>
+                        <CardTitle>{data.title}</CardTitle>
+                        <CardCover src={data.cover} />
+                    </div>
                 </Link>
             ))}
         </CardStyled>

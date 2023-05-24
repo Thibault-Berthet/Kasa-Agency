@@ -1,7 +1,12 @@
+/* ------------ Code REACT pour la page ErrorNotFound ------------*/
+
+
+import ErrorPage from "../../components/ErrorPage"
+
 function ErrorNotFound() {
 	return (
 		<div>
-			<h1>Ici s'affichera les erreur 404</h1>
+			<ErrorPage />
 		</div>
 	)
 }

@@ -1,8 +1,11 @@
+/* ------------ Code REACT pour le composant Banner ------------*/
+
 import styled from "styled-components"
 import banner from '../../assets/banner_img.jpg'
 import colors from "../../utils/style/colors"
 import variables from "../../utils/variables/variables"
 
+// CSS des différents éléments
 const BannerContainer = styled.div`
     height: 14rem;
     margin-bottom: 43px;
@@ -34,7 +37,6 @@ const BannerImg = styled.img`
     width: 100%;
     object-fit: cover;
     border-radius: 25px;
-    
     filter: brightness(70%);
     @media screen and (max-width: ${variables.mobileResponsive}) {
         border-radius: 10px;

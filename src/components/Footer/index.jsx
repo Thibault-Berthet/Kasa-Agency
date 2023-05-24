@@ -1,5 +1,7 @@
+/* ------------ Code REACT pour le composant Footer ------------*/
+
 import styled from "styled-components"
-import logo from "../../assets/logo_kasa_white.png"
+import logo from "../../assets/logo_kasa_white.svg"
 import colors from "../../utils/style/colors"
 import variables from "../../utils/variables/variables"
 

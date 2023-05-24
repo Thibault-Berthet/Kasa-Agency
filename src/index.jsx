@@ -1,3 +1,5 @@
+/* ------------ Code REACT pour l'index ------------*/
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -10,6 +12,7 @@ import HousingCard from './pages/HousingCard'
 import ErrorNotFound from './pages/ErrorNotFound'
 import './index.css'
 
+// Utilisation d'un style global pour toutes les pages du site
 const GlobalStyle = createGlobalStyle`
     div {
         font-family: Montserrat, 'Trebuchet MS', Helvetica, sans-serif;
@@ -20,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 `
 
+// Routing de l'application
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
 	<React.StrictMode>

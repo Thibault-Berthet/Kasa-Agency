@@ -1,5 +1,7 @@
+/* ------------ Variables utilisées pour le site ------------*/
+
 const variables = {
-    mobileResponsive: '800px',
+    mobileResponsive: '750px',
 }
 
 export default variables

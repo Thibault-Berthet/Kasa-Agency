@@ -1,8 +1,10 @@
+/* ------------ Code REACT pour le composant Header ------------*/
+
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import variables from '../../utils/variables/variables'
-import logo from '../../assets/logo_kasa.png'
+import logo from '../../assets/logo_kasa.svg'
 
 const StyledLink = styled(Link)`
     padding-left: 3.5rem;

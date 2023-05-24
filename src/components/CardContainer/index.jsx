@@ -1,3 +1,5 @@
+/* ------------ Code REACT pour le composant CardContainer ------------*/
+
 import Card from "../Card"
 import styled from "styled-components"
 import variables from "../../utils/variables/variables"
