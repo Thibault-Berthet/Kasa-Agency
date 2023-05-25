@@ -4,6 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -22,12 +23,17 @@ const GlobalStyle = createGlobalStyle`
         padding: 0px;
 	}
 `
+const GlobalContainer = styled.div`
+	max-width: 1440px;
+	margin: 0 auto;
+`
 
 // Routing de l'application
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
 	<React.StrictMode>
 		<Router>
+			<GlobalContainer>
 			<GlobalStyle />
 			<Header />
 			<Routes>
@@ -37,6 +43,7 @@ root.render(
 				<Route path="*"element={<ErrorNotFound />} />
 			</Routes>
 			<Footer />
+			</GlobalContainer>
 		</Router>
 	</React.StrictMode>
 )

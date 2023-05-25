@@ -15,14 +15,13 @@ const CardStyled = styled.article`
         align-content: center;
 	}
 `
-const CardCover = styled.img`
-    position: realtive;
-    height: 340px;
+const CardGradient = styled.div`
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
     width: 340px;
-    margin-bottom: 50px;
-    object-fit: cover;
+    height: 340px;
     border-radius: 10px;
-    background: linear-gradient(180deg, rgb(235, 99, 99) 0%, rgba(54, 26, 26, 0.667) 100% );
     @media screen and (max-width: ${variables.mobileResponsive}) {
         width: 100%;
         max-width: 340px;
@@ -38,26 +37,28 @@ const CardTitle = styled.h2`
     margin-top: 280px;
     margin-left: 20px;
     max-width: 250px;
-    background: linear-gradient(180deg, rgb(235, 99, 99) 0%, rgba(54, 26, 26, 0.667) 100% );
+    // background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
     @media screen and (max-width: ${variables.mobileResponsive}) {
         margin-top: 195px;
         max-width: 250px;
 	}
 `
-
+const CardCover = styled.img`
+    position: relative;
+    height: 340px;
+    width: 340px;
+    margin-bottom: 50px;
+    object-fit: cover;
+    border-radius: 10px;
+    @media screen and (max-width: ${variables.mobileResponsive}) {
+        width: 100%;
+        max-width: 340px;
+        height: 255px;
+	}
+`
 function Card() {
 
     const [logements, setLogements] = useState([]);
-
-    // useEffect(() => {
-    //     fetch('http://localhost:3000/logements.json')
-
-    //         .then((response) => response.json())
-
-    //         .then(data => {
-    //             setLogements(data)
-    //         })
-    // }, [])
 
     useEffect(() => {
         async function fetchLogement() {
@@ -76,7 +77,10 @@ function Card() {
         <CardStyled>
             {logements.map((data, index) => (
                 <Link to={`/logements/${data.id}`} key={`${data.id}-${index}`}>
-                    <CardTitle>{data.title}</CardTitle>
+                    <CardGradient>
+                        
+                        <CardTitle>{data.title}</CardTitle>
+                    </CardGradient>
                     <CardCover src={data.cover} />
                 </Link>
             ))}
@@ -85,3 +89,15 @@ function Card() {
 }
 
 export default Card
+
+// Utilisation de fetch avec les .then pour récupérer les données
+
+// useEffect(() => {
+//     fetch('http://localhost:3000/logements.json')
+
+//         .then((response) => response.json())
+
+//         .then(data => {
+//             setLogements(data)
+//         })
+// }, [])
