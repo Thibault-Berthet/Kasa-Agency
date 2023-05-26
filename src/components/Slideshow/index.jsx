@@ -19,7 +19,6 @@ const ContainerImageIndex = styled.div`
 `
 const ContainerPicture = styled.div`
     height: 415px;
-    width : 1290px;
 `
 const PicturesStyled = styled.img`
     display: flex;
@@ -53,24 +52,25 @@ function Slideshow(props) {
     // Longueur du tableau des slides
     const lengthSlides = slideShow.length
 
-    // Fonction qui reviens au premier slide quand on fait suivant au dernier
+    // Fonction qui va au slide suivant et qui reviens au premier slide quand on fait suivant au dernier
     const nextSlide = () => {
         setSlideIndex(slideIndex === lengthSlides - 1 ? 0 : slideIndex + 1)
     }
 
-    // Fonction qui va au dernier slide quand on fait précédent au premier
+    // Fonction qui va au slide précédent et qui va au dernier slide quand on fait précédent au premier
     const prevSlide = () => {
-		setSlideIndex(slideIndex === 0 ? lengthSlides - 1 : slideIndex - 1); // repartir au dernier slide quand on est au premier
+		setSlideIndex(slideIndex === 0 ? lengthSlides - 1 : slideIndex - 1);
 	}
 
     return (
         <SlideContainer>
             {lengthSlides > 1 && (
 				<ChevronLeftStyled
-					src={chevronLeft} //Affichage des flèches seulement si length > 1
+					src={chevronLeft}
 					onClick={prevSlide}
 				/>
 			)}
+
             {slideShow.map((slides, index) => (
 				<ContainerImageIndex key={index}>
                     {index === slideIndex &&
@@ -85,6 +85,7 @@ function Slideshow(props) {
 					)}
 				</ContainerImageIndex>
 			))}
+
             {lengthSlides > 1 && (
 				<ChevronRightStyled
 					src={chevronRight}
