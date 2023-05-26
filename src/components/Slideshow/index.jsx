@@ -47,18 +47,18 @@ const ChevronRightStyled =styled.img`
 function Slideshow(props) {
     
     // Index du premier slide défini à 0
-    const [slide, setSlide] = useState(0)
+    const [slideIndex, setSlideIndex] = useState(0)
     // Longueur du tableau des slides
     const lengthSlides = props.pictures.length
 
     // Fonction qui reviens au premier slide quand on fait suivant au dernier
     const nextSlide = () => {
-        setSlide(slide === lengthSlides - 1 ? 0 : slide + 1)
+        setSlideIndex(slideIndex === lengthSlides - 1 ? 0 : slideIndex + 1)
     }
 
     // Fonction qui va au dernier slide quand on fait précédent au premier
     const prevSlide = () => {
-		setSlide(slide === 0 ? lengthSlides - 1 : slide - 1); // repartir au dernier slide quand on est au premier
+		setSlideIndex(slideIndex === 0 ? lengthSlides - 1 : slideIndex - 1); // repartir au dernier slide quand on est au premier
 	}
 
     return (
@@ -71,14 +71,14 @@ function Slideshow(props) {
 			)}
             {props.pictures.map((slides, index) => (
 				<ContainerImageIndex key={index}>
-                    {index === slide &&
+                    {index === slideIndex &&
                         <ContainerPicture>
                             <PicturesStyled src={slides}/>
                         </ContainerPicture>
                     }
-					{index === slide && (
+					{index === slideIndex && (
 						<IndexStyled>
-							{slide + 1}/{lengthSlides}
+							{slideIndex + 1}/{lengthSlides}
 						</IndexStyled>
 					)}
 				</ContainerImageIndex>
