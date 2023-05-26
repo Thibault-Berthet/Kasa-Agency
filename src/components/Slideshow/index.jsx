@@ -46,10 +46,12 @@ const ChevronRightStyled =styled.img`
 
 function Slideshow(props) {
     
+    // Création du tableau de pictures
+    const slideShow = props.pictures
     // Index du premier slide défini à 0
     const [slideIndex, setSlideIndex] = useState(0)
     // Longueur du tableau des slides
-    const lengthSlides = props.pictures.length
+    const lengthSlides = slideShow.length
 
     // Fonction qui reviens au premier slide quand on fait suivant au dernier
     const nextSlide = () => {
@@ -69,7 +71,7 @@ function Slideshow(props) {
 					onClick={prevSlide}
 				/>
 			)}
-            {props.pictures.map((slides, index) => (
+            {slideShow.map((slides, index) => (
 				<ContainerImageIndex key={index}>
                     {index === slideIndex &&
                         <ContainerPicture>
