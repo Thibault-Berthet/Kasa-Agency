@@ -2,8 +2,13 @@
 
 import { useEffect, useState } from "react"
 import Slideshow from "../../components/Slideshow"
-import { useParams } from "react-router-dom"
+import { useParams, } from "react-router-dom"
 import ErrorPage from "../../components/ErrorPage"
+import styled from "styled-components"
+
+const HousingCardContainer = styled.div`
+	margin: 5%;
+`
 
 function HousingCard() {
 
@@ -25,7 +30,7 @@ function HousingCard() {
                 console.log('--- error ---', err)
             }
         }
-        fetchLogement()
+        fetchLogement();
     }, )
 
 	if(!logement) {
@@ -35,11 +40,11 @@ function HousingCard() {
 	}
 
 	return (
-		<div>
+		<HousingCardContainer>
 			<Slideshow
 				pictures={logement.pictures}
 			/>
-		</div>
+		</HousingCardContainer>
 	)
 }
 
