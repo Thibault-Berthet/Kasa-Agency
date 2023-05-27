@@ -8,11 +8,7 @@ import chevronUp from "../../assets/chevron_up.svg"
 import chevronDown from "../../assets/chevron_down.svg"
 
 const AboutContainer = styled.div`
-    margin-right: 10%;
-    margin-left: 10%;
-    @media screen and (max-width: ${variables.mobileResponsive}) {
-        margin: 0;
-	}
+    
 `
 const CategoryContainer = styled.div`
 	color: ${colors.secondary};
@@ -26,11 +22,16 @@ const CategoryContainer = styled.div`
     padding-bottom: 10px;
     border-radius: 5px;
     margin-top: 31px;
+    @media screen and (max-width: ${variables.mobileResponsive}) {
+        margin-top: 20px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+	}
 `
 const CategoryText = styled.h2`
     margin: 0;
     padding: 0;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 500;
     @media screen and (max-width: ${variables.mobileResponsive}) {
         font-size: 13px;
@@ -59,7 +60,7 @@ const ExplanationText = styled.p`
     margin: 0;
     padding: 0;
     color: ${colors.primary};
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 400;
     @media screen and (max-width: ${variables.mobileResponsive}) {
         font-size: 12px;
@@ -77,7 +78,7 @@ function Collapse(props) {
         <AboutContainer>
             <CategoryContainer onClick={isOpenState}>
                 <CategoryText>
-                    {props.aboutCategory}
+                    {props.Category}
                 </CategoryText>
                 <CategoryChevron 
                     src={isOpen ? chevronUp : chevronDown}/>
@@ -85,7 +86,7 @@ function Collapse(props) {
             {isOpen &&
                 <ExplanationContainer>
                     <ExplanationText>
-                        {props.aboutExplanation}
+                        {props.Explanation}
                     </ExplanationText>
                 </ExplanationContainer>
             }

@@ -4,12 +4,18 @@ import styled from "styled-components"
 import { useState } from "react"
 import chevronRight from "../../assets/chevron_right.svg"
 import chevronLeft from "../../assets/chevron_left.svg"
+import variables from "../../utils/variables/variables"
 
 const SlideContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 40px;
+    @media screen and (max-width: ${variables.mobileResponsive}) {
+        margin-left: 3%;
+        margin-right: 3%;
+        margin-bottom: 15px;
+	}
 `
 const ContainerImageIndex = styled.div`
     display: flex;
@@ -19,6 +25,9 @@ const ContainerImageIndex = styled.div`
 `
 const ContainerPicture = styled.div`
     height: 415px;
+    @media screen and (max-width: ${variables.mobileResponsive}) {
+        height: 255px;
+	}
 `
 const PicturesStyled = styled.img`
     display: flex;
@@ -32,15 +41,28 @@ const PicturesStyled = styled.img`
 const ChevronLeftStyled =styled.img`
     z-index: 1;
     margin-right: -70px;
+    @media screen and (max-width: ${variables.mobileResponsive}) {
+        width: 12px;
+        height: 20px;
+        margin-right: -20px;
+	}
 `
 const IndexStyled = styled.span`
     z-index: 1;
     margin-top: -40px;
     color: white;
+    @media screen and (max-width: ${variables.mobileResponsive}) {
+        display: none;
+	}
 `
 const ChevronRightStyled =styled.img`
     z-index: 1;
     margin-left: -70px;
+    @media screen and (max-width: ${variables.mobileResponsive}) {
+        width: 12px;
+        height: 20px;
+        margin-left: -20px;
+	}
 `
 
 function Slideshow(props) {
