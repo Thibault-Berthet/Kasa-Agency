@@ -23,7 +23,7 @@ const CardGradient = styled.div`
     height: 340px;
     border-radius: 10px;
     @media screen and (max-width: ${variables.mobileResponsive}) {
-        width: 100%;
+        width: 90%;
         max-width: 340px;
         height: 255px;
 	}

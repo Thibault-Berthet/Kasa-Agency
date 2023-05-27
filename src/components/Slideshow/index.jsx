@@ -11,6 +11,7 @@ const SlideContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin-bottom: 40px;
+    width: 100%;
     @media screen and (max-width: ${variables.mobileResponsive}) {
         margin-left: 3%;
         margin-right: 3%;
@@ -22,9 +23,11 @@ const ContainerImageIndex = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    // width: 100%;
 `
 const ContainerPicture = styled.div`
     height: 415px;
+    width: 100%;
     @media screen and (max-width: ${variables.mobileResponsive}) {
         height: 255px;
 	}
@@ -81,7 +84,7 @@ function Slideshow(props) {
 
     // Fonction qui va au slide précédent et qui va au dernier slide quand on fait précédent au premier
     const prevSlide = () => {
-		setSlideIndex(slideIndex === 0 ? lengthSlides - 1 : slideIndex - 1);
+		setSlideIndex(slideIndex === 0 ? lengthSlides - 1 : slideIndex - 1)
 	}
 
     return (

@@ -13,7 +13,7 @@ const BannerContainer = styled.div`
         height: 7rem;
 	}
 `
-const BannerText = styled.div`
+const BannerText = styled.p`
     position: absolute;
     z-index: 1;
     color: ${colors.secondary};
@@ -29,6 +29,7 @@ const BannerText = styled.div`
         margin-left: 3rem;
         text-align: start;
         margin-top: 2rem;
+        width : 220px;
 	}
 `
 const BannerImg = styled.img`
