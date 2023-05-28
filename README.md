@@ -1,3 +1,19 @@
+Hi,
+
+This is the sixth project that i did as part of my training to become web developer. The project was about learning and using React and React Router for frontend.
+
+If you watch it, first of all thank you ! And feel free to contact me about some part of the code ;)
+
+To launch the project you will have to do 2 things :
+
+    Open a console, go to the main folder and type "npm install"
+    Then in the same folder type "npm start"
+    After this two steps the site will open automatically but if it doesn't go to this adress http://localhost:3000/ !
+
+I wish you a nice day or evening,
+
+Thibault
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
