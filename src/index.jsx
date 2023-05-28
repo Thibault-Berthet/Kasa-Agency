@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 import styled from 'styled-components'
 
-// Importation des composants du site
+// Importation des composants et pages du site
 import Header from './components/Header'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -38,15 +38,15 @@ root.render(
 	<React.StrictMode>
 		<Router>
 			<GlobalContainer>
-			<GlobalStyle />
-			<Header />
-			<Routes>
-				<Route exact index path="/" element={<Home />} />
-				<Route exact path="/about" element={<About />} />
-				<Route exact path="/logements/:id" element={<HousingCard />} />
-				<Route path="*"element={<ErrorNotFound />} />
-			</Routes>
-			<Footer />
+				<GlobalStyle />
+				<Header />
+				<Routes>
+					<Route exact index path="/" element={<Home />} />
+					<Route exact path="/about" element={<About />} />
+					<Route exact path="/logements/:id" element={<HousingCard />} />
+					<Route path="*"element={<ErrorNotFound />} />
+				</Routes>
+				<Footer />
 			</GlobalContainer>
 		</Router>
 	</React.StrictMode>
