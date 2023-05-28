@@ -8,7 +8,7 @@ To launch the project you will have to do 2 things :
 
  - Open a console, go to the main folder and type "npm install"
  - Then in the same folder type "npm start"
- - After this two steps the site will open automatically but if it doesn't go to this adress http://localhost:3000/
+ - After this two steps the site will open automatically but if it doesn't, go to this adress http://localhost:3000/
 
 I wish you a nice day or evening,
 
