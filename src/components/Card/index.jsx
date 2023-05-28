@@ -6,6 +6,7 @@ import styled from "styled-components"
 import colors from "../../utils/style/colors"
 import variables from "../../utils/variables/variables"
 
+// CSS des différents éléments
 const CardStyled = styled.article`
     display: flex;
     flex-flow: wrap row;
@@ -37,7 +38,6 @@ const CardTitle = styled.h2`
     margin-top: 280px;
     margin-left: 20px;
     max-width: 250px;
-    // background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
     @media screen and (max-width: ${variables.mobileResponsive}) {
         margin-top: 195px;
         max-width: 250px;
@@ -56,10 +56,13 @@ const CardCover = styled.img`
         height: 255px;
 	}
 `
+
 function Card() {
 
+    // Initialisation des logements avec un tableau vide
     const [logements, setLogements] = useState([]);
 
+    // Utilisation de fetch en asynchrone pour aller chercher les informations à propos des logements
     useEffect(() => {
         async function fetchLogement() {
             try {
@@ -73,12 +76,13 @@ function Card() {
         fetchLogement()
     }, [])
 
+    // Création de la liste des logements avec map
+    // Passage des données logements dans les composants avec les props
     return (
         <CardStyled>
             {logements.map((data, index) => (
                 <Link to={`/logements/${data.id}`} key={`${data.id}-${index}`}>
                     <CardGradient>
-                        
                         <CardTitle>{data.title}</CardTitle>
                     </CardGradient>
                     <CardCover src={data.cover} />
@@ -91,7 +95,6 @@ function Card() {
 export default Card
 
 // Utilisation de fetch avec les .then pour récupérer les données
-
 // useEffect(() => {
 //     fetch('http://localhost:3000/logements.json')
 

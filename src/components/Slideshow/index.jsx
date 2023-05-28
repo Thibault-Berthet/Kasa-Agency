@@ -6,6 +6,7 @@ import chevronRight from "../../assets/chevron_right.svg"
 import chevronLeft from "../../assets/chevron_left.svg"
 import variables from "../../utils/variables/variables"
 
+// CSS des différents éléments
 const SlideContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -67,13 +68,15 @@ const ChevronRightStyled =styled.img`
         margin-left: -20px;
 	}
 `
-
+// Récupération des informations via les props
 function Slideshow(props) {
     
     // Création du tableau de pictures
     const slideShow = props.pictures
+
     // Index du premier slide défini à 0
     const [slideIndex, setSlideIndex] = useState(0)
+
     // Longueur du tableau des slides
     const lengthSlides = slideShow.length
 
@@ -93,6 +96,7 @@ function Slideshow(props) {
 				<ChevronLeftStyled
 					src={chevronLeft}
 					onClick={prevSlide}
+                    alt="Flèche vers la gauche qui permet de changer l'image afficher"
 				/>
 			)}
 
@@ -100,7 +104,10 @@ function Slideshow(props) {
 				<ContainerImageIndex key={index}>
                     {index === slideIndex &&
                         <ContainerPicture>
-                            <PicturesStyled src={slides}/>
+                            <PicturesStyled
+                                src={slides}
+                                alt="Photo du logement"
+                            />
                         </ContainerPicture>
                     }
 					{index === slideIndex && (
@@ -115,6 +122,7 @@ function Slideshow(props) {
 				<ChevronRightStyled
 					src={chevronRight}
 					onClick={nextSlide}
+                    alt="Flèche vers la droite qui permet de changer l'image afficher"
 				/>
 			)}
         </SlideContainer>

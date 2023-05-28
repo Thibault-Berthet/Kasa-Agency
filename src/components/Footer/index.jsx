@@ -5,6 +5,7 @@ import logo from "../../assets/logo_kasa_white.svg"
 import colors from "../../utils/style/colors"
 import variables from "../../utils/variables/variables"
 
+// CSS des différents éléments
 const FooterContainer = styled.footer`
 	display: flex;
 	flex-direction: column;
@@ -32,7 +33,10 @@ const FooterLogo = styled.img`
 function Footer() {
 	return (
 		<FooterContainer>
-			<FooterLogo src={logo}/>
+			<FooterLogo
+				src={logo}
+				alt="Image du mot kasa écrit K A S A de couleur blanche sur fond noir avec le premier a en forme de maison"
+			/>
 			<FooterStyled>
 				© 2020 Kasa. All rights reserved
 			</FooterStyled>

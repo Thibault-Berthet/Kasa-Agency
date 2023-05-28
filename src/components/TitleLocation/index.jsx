@@ -4,6 +4,7 @@ import styled from "styled-components"
 import colors from "../../utils/style/colors"
 import variables from "../../utils/variables/variables"
 
+// CSS des différents éléments
 const TitleLocationContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -31,6 +32,8 @@ const LocationStyled = styled.h2`
         margin-bottom: 12px;
 	}
 `
+
+// Récupération des données via les props
 function TitleLocation(props) {
     return (
         <TitleLocationContainer>

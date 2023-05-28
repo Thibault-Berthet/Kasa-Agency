@@ -1,12 +1,13 @@
 /* ------------ Code REACT pour le composant Collapse ------------*/
 
+import { useState } from "react"
 import colors from "../../utils/style/colors"
 import variables from "../../utils/variables/variables"
 import styled from "styled-components"
-import { useState } from "react"
 import chevronUp from "../../assets/chevron_up.svg"
 import chevronDown from "../../assets/chevron_down.svg"
 
+// CSS des différents éléments
 const AboutContainer = styled.div`
     
 `
@@ -67,13 +68,18 @@ const ExplanationText = styled.p`
 	}
 `
 
+// Reception des informations via les props
 function Collapse(props) {
+
+    // Initialisation du collapse à false, le texte est caché
     const [isOpen, setIsOpen] = useState(false)
 
+    // Fonction de changement de l'état de isOpen au moment du click
     const isOpenState = () => {
         setIsOpen(!isOpen)
     }
 
+    // Utilisation des données collapse grace aux props
     return (
         <AboutContainer>
             <CategoryContainer onClick={isOpenState}>
@@ -81,7 +87,9 @@ function Collapse(props) {
                     {props.Category}
                 </CategoryText>
                 <CategoryChevron 
-                    src={isOpen ? chevronUp : chevronDown}/>
+                    src={isOpen ? chevronUp : chevronDown}
+                    alt="Fleche indiquant le bas quand le texte est caché et indiquant le haut quand le texte est visible"
+                />
             </CategoryContainer>
             {isOpen &&
                 <ExplanationContainer>

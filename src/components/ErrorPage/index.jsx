@@ -5,6 +5,7 @@ import styled from "styled-components"
 import colors from "../../utils/style/colors"
 import variables from "../../utils/variables/variables"
 
+// CSS des différents éléments
 const ErrorContainer = styled.div`
 	display: flex;
     align-items: center;

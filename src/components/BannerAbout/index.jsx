@@ -4,6 +4,7 @@ import styled from "styled-components"
 import bannerAbout from "../../assets/banner_about_img.jpg"
 import variables from "../../utils/variables/variables"
 
+// CSS des différents éléments
 const BannerAboutContainer = styled.div`
     height: 14rem;
     margin-bottom: 43px;
@@ -11,7 +12,6 @@ const BannerAboutContainer = styled.div`
         height: 223px;
 	}
 `
-
 const BannerAboutImg = styled.img`
     display: flex;
     justify-content: center;
@@ -29,7 +29,10 @@ const BannerAboutImg = styled.img`
 function BannerAbout() {
 	return (
 		<BannerAboutContainer>
-            <BannerAboutImg src={bannerAbout} />
+            <BannerAboutImg
+                src={bannerAbout}
+                alt="Photo d'une vallée entre des montagnes enneigées avec une forêt verdoyante en premier plan"
+            />
 		</BannerAboutContainer>
 	)
 }

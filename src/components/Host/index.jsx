@@ -4,6 +4,7 @@ import styled from "styled-components"
 import colors from "../../utils/style/colors"
 import variables from "../../utils/variables/variables"
 
+// CSS des différents éléments
 const HostContainer = styled.div`
     display: flex;
     flex-direction: row;
@@ -35,6 +36,7 @@ const PictureStyled = styled.img`
         margin-bottom: 0px;
 	}
 `
+// Récupération des informations via les props
 function Host(props) {
     return (
         <HostContainer>
@@ -43,6 +45,7 @@ function Host(props) {
             </NameStyled>
             <PictureStyled
                 src={props.host.picture}
+                alt="Photo de profil du propriétaire du logement"
             />
         </HostContainer>
     )

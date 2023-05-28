@@ -5,6 +5,7 @@ import styled from "styled-components"
 import variables from "../../utils/variables/variables"
 import colors from "../../utils/style/colors"
 
+// CSS du container
 const CardContainerStyled = styled.div`
     background: ${colors.fourth};
     border-radius: 25px;

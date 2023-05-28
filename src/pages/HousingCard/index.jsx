@@ -1,17 +1,18 @@
 /* ------------ Code REACT pour la page HousingCard ------------*/
 
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import styled from "styled-components"
+import variables from "../../utils/variables/variables"
 import Slideshow from "../../components/Slideshow"
 import TitleLocation from "../../components/TitleLocation"
 import Tag from "../../components/Tag"
 import Host from "../../components/Host"
 import Rate from "../../components/Rate"
 import Collapse from "../../components/Collapse"
-import { useParams, } from "react-router-dom"
 import ErrorPage from "../../components/ErrorPage"
-import styled from "styled-components"
-import variables from "../../utils/variables/variables"
 
+// CSS des différents éléments, utilisation de flexbox pour l'agencement
 const HousingCardContainer = styled.div`
 	margin: 5%;
 	display: flex;
@@ -64,10 +65,14 @@ const EquipStyled = styled.li`
 
 function HousingCard() {
 
-	const params = useParams() // Chercher l'id dans l'url avec react router dom
+	// useParams va venir chercher l'id dans l'url
+	const params = useParams()
 
+	// Initialisation du logement
 	const [logement, setLogement] = useState(null)
 
+	// Utilisation de fetch en asynchrone pour aller chercher les informations à propos des logements
+	// Utilisation de params pour séléctionner le bon logement grace à l'id
 	useEffect(() => {
         async function fetchLogement() {
             try {
@@ -85,12 +90,14 @@ function HousingCard() {
         fetchLogement();
     }, )
 
+	// Si l'adresse du logement n'existe pas retour la page d'erreur et garde la mauvaise adresse
 	if(!logement) {
 		return (
 			<ErrorPage />
 		)
 	}
 
+	// Création de la liste des équipements
 	const equip = logement.equipments.map((item, index) => (
 		<EquipStyled key={index}>
 			{item}

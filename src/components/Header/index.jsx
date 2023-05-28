@@ -1,18 +1,22 @@
 /* ------------ Code REACT pour le composant Header ------------*/
 
-import { Link } from 'react-router-dom'
+import { Link, NavLink as BaseNavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import variables from '../../utils/variables/variables'
 import logo from '../../assets/logo_kasa.svg'
 
-const StyledLink = styled(Link)`
+// CSS des différents éléments
+const StyledLink = styled(BaseNavLink)`
     padding-left: 3.5rem;
     color: ${colors.primary};
     text-decoration: none;
     font-size: 24px;
     font-weight: 500;
     &:hover {
+        text-decoration-line: underline;
+    }
+    &.active {
         text-decoration-line: underline;
     }
     @media screen and (max-width: ${variables.mobileResponsive}) {
@@ -38,7 +42,10 @@ function Header() {
     return (
         <HeaderContainer>
             <Link to="/">
-                <HomeLogo src={logo} />
+                <HomeLogo
+                    src={logo}
+                    alt="Image du mot kasa écrit K A S A de couleur rouge-rose sur fond blanc avec le premier a en forme de maison"
+                />
             </Link>
             <div>
                 <StyledLink to="/">Accueil</StyledLink>

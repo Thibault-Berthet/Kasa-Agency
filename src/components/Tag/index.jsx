@@ -4,6 +4,7 @@ import styled from "styled-components"
 import colors from "../../utils/style/colors"
 import variables from "../../utils/variables/variables"
 
+// CSS des différents éléments
 const TagContainer = styled.div`
     display: flex;
     flex-direction: row;
@@ -30,6 +31,7 @@ const TagStyled = styled.span`
 	}
 `
 
+// Récupération des données via les props
 function Tag(props) {
     return (
         <TagContainer>

@@ -22,8 +22,8 @@ const BannerText = styled.p`
     left: 0;
     right: 0;
     margin: 0 auto;
-    text-align: center;
     margin-top: 5rem;
+    text-align: center;
     @media screen and (max-width: ${variables.mobileResponsive}) {
         font-size: 24px;
         margin-left: 3rem;
@@ -48,7 +48,10 @@ function Banner() {
 	return (
 		<BannerContainer>
 			<BannerText>Chez vous, partout et ailleurs</BannerText>
-            <BannerImg src={banner} />
+            <BannerImg
+                src={banner}
+                alt="Photo de falaises en bord de mer par un temps gris avec quelques sapins sur le haut des falaises"
+            />
 		</BannerContainer>
 	)
 }
