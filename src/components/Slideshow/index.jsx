@@ -24,7 +24,7 @@ const ContainerImageIndex = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    // width: 100%;
+    width: 100%;
 `
 const ContainerPicture = styled.div`
     height: 415px;
@@ -90,6 +90,9 @@ function Slideshow(props) {
 		setSlideIndex(slideIndex === 0 ? lengthSlides - 1 : slideIndex - 1)
 	}
 
+    // Selection de l'image
+    const selectPicture = slideShow.slice(slideIndex,slideIndex + 1)
+
     return (
         <SlideContainer>
             {lengthSlides > 1 && (
@@ -100,21 +103,17 @@ function Slideshow(props) {
 				/>
 			)}
 
-            {slideShow.map((slides, index) => (
+            {selectPicture.map((slides, index) => (
 				<ContainerImageIndex key={index}>
-                    {index === slideIndex &&
-                        <ContainerPicture>
-                            <PicturesStyled
-                                src={slides}
-                                alt="Photo du logement"
-                            />
-                        </ContainerPicture>
-                    }
-					{index === slideIndex && (
-						<IndexStyled>
-							{slideIndex + 1}/{lengthSlides}
-						</IndexStyled>
-					)}
+                    <ContainerPicture>
+                        <PicturesStyled
+                            src={slides}
+                            alt="Photo du logement"
+                        />
+                    </ContainerPicture>
+                    <IndexStyled>
+                        {slideIndex + 1}/{lengthSlides}
+                    </IndexStyled>
 				</ContainerImageIndex>
 			))}
 
