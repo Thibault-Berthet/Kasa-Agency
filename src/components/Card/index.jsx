@@ -85,7 +85,10 @@ function Card() {
                     <CardGradient>
                         <CardTitle>{data.title}</CardTitle>
                     </CardGradient>
-                    <CardCover src={data.cover} />
+                    <CardCover
+                        src={data.cover}
+                        alt="Photo du logement"
+                    />
                 </Link>
             ))}
         </CardStyled>
