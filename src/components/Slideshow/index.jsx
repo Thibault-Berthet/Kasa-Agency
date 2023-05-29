@@ -74,11 +74,11 @@ function Slideshow(props) {
     // Création du tableau de pictures
     const slideShow = props.pictures
 
-    // Index du premier slide défini à 0
-    const [slideIndex, setSlideIndex] = useState(0)
-
     // Longueur du tableau des slides
     const lengthSlides = slideShow.length
+
+    // Index du premier slide défini à 0
+    const [slideIndex, setSlideIndex] = useState(0)
 
     // Fonction qui va au slide suivant et qui reviens au premier slide quand on fait suivant au dernier
     const nextSlide = () => {
