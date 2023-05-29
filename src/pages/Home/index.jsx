@@ -1,8 +1,8 @@
 /* ------------ Code REACT pour la page Home ------------*/
 
 import Banner from "../../components/Banner"
-import styled from "styled-components"
 import CardContainer from "../../components/CardContainer"
+import styled from "styled-components"
 
 // CSS du container
 const HomeContainer = styled.div`

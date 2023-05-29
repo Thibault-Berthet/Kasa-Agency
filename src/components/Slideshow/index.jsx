@@ -90,7 +90,7 @@ function Slideshow(props) {
 		setSlideIndex(slideIndex === 0 ? lengthSlides - 1 : slideIndex - 1)
 	}
 
-    // Selection de l'image
+    // Selection de l'image à afficher
     const selectPicture = slideShow.slice(slideIndex,slideIndex + 1)
 
     return (

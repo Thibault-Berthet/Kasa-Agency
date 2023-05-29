@@ -44,7 +44,7 @@ root.render(
 					<Route exact index path="/" element={<Home />} />
 					<Route exact path="/about" element={<About />} />
 					<Route exact path="/logements/:id" element={<HousingCard />} />
-					<Route path="*"element={<ErrorNotFound />} />
+					<Route path="*" element={<ErrorNotFound />} />
 				</Routes>
 				<Footer />
 			</GlobalContainer>

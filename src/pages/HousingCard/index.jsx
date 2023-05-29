@@ -79,9 +79,6 @@ function HousingCard() {
                 const response = await fetch('http://localhost:3000/logements.json')
                 const data = await response.json()
 				const res = data.find((element) => element.id === params.id)
-				if (!res) {
-
-				}
 				setLogement(res)
             } catch(err) {
                 console.log('--- error ---', err)
