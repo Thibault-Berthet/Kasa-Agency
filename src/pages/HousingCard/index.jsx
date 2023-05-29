@@ -71,6 +71,9 @@ function HousingCard() {
 	// Initialisation du logement
 	const [logement, setLogement] = useState(null)
 
+	// State de chargement
+	const [isLoading, setIsLoading] = useState(true)
+
 	// Utilisation de fetch en asynchrone pour aller chercher les informations à propos des logements
 	// Utilisation de params pour séléctionner le bon logement grace à l'id
 	useEffect(() => {
@@ -80,6 +83,7 @@ function HousingCard() {
                 const data = await response.json()
 				const res = data.find((element) => element.id === params.id)
 				setLogement(res)
+				setIsLoading(false)
             } catch(err) {
                 console.log('--- error ---', err)
             }
@@ -87,11 +91,14 @@ function HousingCard() {
         fetchLogement();
     }, )
 
+	// En attendant le chargement des datas, à créer un composant de chargement pour remplacer le fragment
+	if(isLoading) {
+		return <></>
+	}
+
 	// Si l'adresse du logement n'existe pas retour la page d'erreur et garde la mauvaise adresse
 	if(!logement) {
-		return (
-			<ErrorPage />
-		)
+		return <ErrorPage />
 	}
 
 	// Création de la liste des équipements
