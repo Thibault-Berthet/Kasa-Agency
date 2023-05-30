@@ -91,7 +91,7 @@ function HousingCard() {
         fetchLogement();
     }, )
 
-	// En attendant le chargement des datas, à créer un composant de chargement pour remplacer le fragment
+	// En attendant le chargement des datas n'affiche rien à l'écran
 	if(isLoading) {
 		return <></>
 	}
