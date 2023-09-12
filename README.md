@@ -1,3 +1,40 @@
+# Agence Kasa
+
+Bonjour, Bonsoir,
+
+Bienvenue sur le code front-end du site de l'agence de location immobilière Kasa. J'ai pu écrire le JavaScript avec la bibliothèque REACT.
+
+Le site est une agence de location immobilière à la manière de Airbnb, il permet de choisir son logement et d'en voir le détail.
+
+Les informations des logements viennent d'un fichier JSON mais le site est construit pour récupérer les infos d'une API.
+
+Pour visualiser le projet il va vous falloir faire plusieurs actions sur votre machine, voici la liste :
+* En premier lieu Node.js doit être installer sur votre ordinateur, vous pouvez aller le chercher ici ==> https://nodejs.org/fr
+* 
+
+
+
+Si vous avez des questions ou des commentaires à propos du code n'hésitez pas !
+
+Bonne journée, soirée à vous,
+
+Thibault
+
+***
+
+Good morning, good evening,
+
+
+
+
+If you have any questions or comments about the code, don't hesitate!
+
+Good day, evening to you,
+
+Thibault
+
+
+
 Hi,
 
 This is the sixth project that i did as part of my training to become web developer. The project was about learning and using React and React Router for frontend.
